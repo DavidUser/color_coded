@@ -8,13 +8,16 @@ if v:version < 704 || !exists("*matchaddpos")
         \ echohl None
   finish
 endif
+
 if has('nvim')
+  " Run lua backend
+  :silent execute "!" . "lua ~/.vim/bundle/color_coded/autoload/color_coded.lua " . v:servername . " >> /tmp/nvim_color_coded_test.log &"
+
   echohl WarningMsg |
-        \ echomsg "color_coded unavailable: nvim isn't yet supported" |
+        \ echomsg "color_coded experimental: nvim is not fully supported" |
         \ echohl None
-  finish
 endif
-if !has('lua')
+if !has('lua') && !has('nvim')
   echohl WarningMsg |
         \ echomsg "color_coded unavailable: requires lua" |
         \ echohl None
