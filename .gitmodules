@@ -1,3 +1,6 @@
 [submodule "lib/jest"]
   path = lib/jest
   url = https://github.com/jeaye/jest.git
+[submodule "cpp-simple-sockets"]
+	path = cpp-simple-sockets
+	url = git@github.com:DavidUser/cpp-simple-sockets.git
